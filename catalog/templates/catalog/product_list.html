@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category.name }}</title>
+</head>
+<body>
+    <h1>Товары в категории: {{ category.name }}</h1>
+
+    {% if products %}
+        <ul>
+            {% for product in products %}
+                <li>
+                    <a href="{% url 'catalog:product_detail' product.slug %}">
+                        {{ product.name }}
+                    </a><br>
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="150">
+                    {% endif %}
+                    <p>Цена: {{ product.price }} тг</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет товаров в этой категории.</p>
+    {% endif %}
+
+    <p><a href="{% url 'catalog:category_list' %}">← Назад к категориям</a></p>
+</body>
+</html>

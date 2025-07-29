@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }}</title>
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+
+    {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
+    {% endif %}
+
+    <p>{{ product.description }}</p>
+    <p>Цена: {{ product.price }} тг</p>
+
+    <form action="{% url 'catalog:cart_add' product.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Добавить в корзину</button>
+    </form>
+
+    <p><a href="{% url 'catalog:product_list' product.category.slug %}">← Назад к товарам</a></p>
+</body>
+</html>

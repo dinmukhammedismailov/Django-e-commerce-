@@ -19,8 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ao5tn_hpk_t$zm#d(2jrq6%1r@qb73@3v!o95^c@(bk6x%jr78'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -128,10 +126,3 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'dinmukhammed.ismailov@gmail.com'  # Твой Gmail
-EMAIL_HOST_PASSWORD = 'kdjleubqvibsxhyf'  # 16-значный пароль приложений
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
